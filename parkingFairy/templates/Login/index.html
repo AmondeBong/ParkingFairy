@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
+    <!--css연결-->
+  </head>
+  <body>
+    <section class="login-form">
+      <!--로그인 섹션시작-->
+      <h1>PARKING FAIRY 계정으로 로그인</h1>
+      <form action="">
+        <div class="int-area">
+          <!--ID-->
+          <input type="text" name="id" id="id" autocomplete="off" required />
+          <label for="id">USER NAME</label>
+        </div>
+
+        <div class="int-area">
+          <!--PASSWORD-->
+          <input
+            type="password"
+            name="pw"
+            id="pw"
+            autocomplete="off"
+            required
+          />
+          <label for="pw">PASSWORD</label>
+        </div>
+
+        <div class="btn-area">
+          <!--로그인버튼-->
+          <button id="btn" type="submit">LOGIN</button>
+        </div>
+      </form>
+
+      <div class="caption">
+        <a href="">Forgot Password?</a>
+      </div>
+    </section>
+    <!--로그인 섹션 끝-->
+  </body>
+</html>
