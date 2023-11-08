@@ -22,3 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
 ]
+
+handler404 = 'parkingFairy.views.error_404_view'
