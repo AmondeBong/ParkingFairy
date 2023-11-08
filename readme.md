@@ -9,17 +9,17 @@
 <br> 1. 깃 허브로 파일 다운 받기 </br>
 
 '''
-  git clone https://github.com/AmondeBong/ParkingFairy
+git clone https://github.com/AmondeBong/ParkingFairy
 '''
 
 <br> 2. 필요한 라이브러리 다운 </br>
 
 '''
-  pip install -r requirements.txt
+pip install -r requirements.txt
 '''
 
 <br> 3. django로 서버 실행 </br>
 
 '''
-  python3 "parkingFairy/manage.py" runserver
+python3 "parkingFairy/manage.py" runserver
 '''
