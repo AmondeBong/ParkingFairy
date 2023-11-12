@@ -119,7 +119,8 @@
                 </div>
 
                 <div class="row_text-center">
-                    <form class="form-signin" method=post enctype=multipart/form-data>
+                    <form class="form-signin" action = "{% url 'detect' %}" method="POST" enctype=multipart/form-data>
+                        {% csrf_token %} 
                         <input type="file" name="file" class="form-control-file" id="inputfile" />
                         <br/>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>

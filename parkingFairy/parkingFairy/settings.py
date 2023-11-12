@@ -126,4 +126,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # css,js, image 경로 �
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# Login 성공시 URL 경로
 LOGIN_REDIRECT_URL = "/"
+
+# Logout 성공시 URL 경로
+LOGOUT_REDIRECT_URL = "/"
