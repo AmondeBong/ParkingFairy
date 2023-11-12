@@ -192,6 +192,7 @@ a{
     background-color: #fffff0;
     position: sticky;
     top : 0px;
+    
 }
 
 .scroll_text a{
@@ -232,6 +233,73 @@ a{
     top : 450px;
 }
 /*port2의 하단 text 부분 끝*/
+
+
+
+
+
+
+/*카메라 기능 시작*/
+.text-center h2{    /*텍스트 부분 시작*/
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;  /*텍스트 부분 끝*/
+}
+
+.row_text-center .form-signin{  /*파일선택부분 시작*/
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}                              /*파일선택부분 끝*/
+
+
+button {   /*버튼부분 시작*/
+    margin: 20px;
+}
+
+.btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.btn-outline {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.btn-lg {
+    background-color: aliceblue;
+    color: #1e6b7b;
+}
+
+.btn-lg-outline {
+    border: 3px solid aliceblue;
+    color: #1e6b7b;
+}
+
+.btn-lg-outline:hover { /*버튼부분 끝*/
+    color: #1e6b7b;
+    background: aliceblue;
+}
+
+/*카메라 기능 끝*/
+
+
 
 
 
@@ -331,7 +399,7 @@ a{
         height : 485px;
         position: relative;
         top : 15px;
-        background : url(Image/mainview2.jpg); 
+        background : url(../Image/mainview2.jpg); 
         background-size: contain;        /*축소될 때 형태 유지*/
         background-repeat: no-repeat;   /*이미지 반복 허용x*/
         background-position: center;    /*중앙을 기준으로 축소*/

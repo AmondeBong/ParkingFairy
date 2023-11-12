@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url(/Image/logbackground.jpg) no-repeat center; /*픽사베이 무료이미지*/
+    background: url(../Image/logbackground.jpg) no-repeat center; /*픽사베이 무료이미지*/
     background-size: cover;
 }
 

@@ -11,3 +11,12 @@ def index(request):
 def error_404_view(request, exception):
     return HttpResponseNotFound("The page is note found!")
 # 404 화면 출력
+
+
+def login(request):
+    return render(request, 'Login/index.html')
+# Create your views here.
+
+
+def signup(request):
+    return render(request, 'SignUp/index.html')

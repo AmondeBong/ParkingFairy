@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+
 {% load static %}
+
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>parking fairy</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!--css와 연결-->
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/style.css' %}"/> <!--css와 연결-->
     <script src = "{% static 'javascript/main.js' %}"></script> <!--js와 연결-->
     <script src="https://kit.fontawesome.com/76ca71fa65.js" crossorigin="anonymous"></script> <!--font awesome에서 내 링크 연동-->
 </head>
@@ -18,6 +19,8 @@
         <div class="navbar___logo"><!--parking fairy로고 시작-->
             <a href="#">PARKING FIARY</a>
         </div>                     <!--parking fairy로고 끝-->
+
+        <!--무료 아이콘 사이트 https://fontawesome.com/-->
 
 
         <div class="boxcontainer"><!--검색창 시작-->
@@ -35,8 +38,11 @@
             </table>
         </div>                    <!--검색창 끝-->
 
+
+
+
         
-        <a href = "https://parking-fairy-login.netlify.app/" class = "icons">
+        <a href = "{% url 'login' %}" class = "icons">
             <i class="fa-regular fa-user fa-xl" style="color: #031026;"></i><!--사용자-->
         </a>
 
@@ -102,6 +108,49 @@
             <p class = "port2bottom">*할인혜택은 계정당 1회씩 참여가능</p>
         </div>
          <!--port2 끝-->
+
+
+
+        <!--카메라 기능 시작-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center"><br><br><br>
+                    <h2 class="section-heading text-uppercase">자동차 탐지</h2><br><br><br>
+                </div>
+
+                <div class="row_text-center">
+                    <form class="form-signin" method=post enctype=multipart/form-data>
+                        <input type="file" name="file" class="form-control-file" id="inputfile" />
+                        <br/>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+                    
+                    </form>
+                <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+                <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+                <script type="text/javascript">
+                    $('#inputfile').bind('change', function() {
+                        let fileSize = this.files[0].size/1024/1024; // this gives in MB
+                        if (fileSize > 10) {
+                        $("#inputfile").val(null);
+                        alert('파일크기가 너무 큽니다. 10MB 이상의 파일은 지원하지 않습니다.')
+                        return
+                        }
+            
+                        let ext = $('#inputfile').val().split('.').pop().toLowerCase();
+                        if($.inArray(ext, ['jpg','jpeg']) == -1) {
+                        $("#inputfile").val(null);
+                        alert('오직 jpeg/jpg 파일만 가능합니다!');
+                        }
+                    });
+                    
+                </script>
+                    
+         
+                </div>
+            </div>
+        </section>
+        <!--카메라 기능 끝-->
     
     
           <!--port3 시작-->
@@ -176,5 +225,12 @@
         <button type="button" class = "main___button2" onclick="location.href='#'">예약하기</button><!--button에 주소 넣는법-->
     </div>
     <!----------------------------작은 화면에서의 메인 view 끝------------------------>
+
+
+
+
+
+
+   
 </body>
 </html>

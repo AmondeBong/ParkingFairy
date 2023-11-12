@@ -9,12 +9,11 @@
     <!-- 헤더 -->
     <div id="header">
       <a
-        href="https://nid.naver.com/user2/V2Join.nhn?m=agree#agreeBottom"
-        target="_blank"
+        href="https://parking-fairy.netlify.app"
+        target="_self"
         title="회원가입창"
-        ><img src="#" id="logo"
+        ><img src="P.png" id="logo"
       /></a>
-      <!--임시로 네이버 진짜 회원가입창-->
     </div>
 
     <!-- wrapper 시작 -->
@@ -40,7 +39,6 @@
           <span class="box int_pass">
             <input type="text" id="pswd1" class="int" maxlength="20" />
             <span id="alertTxt">사용불가</span>
-            <img src="m_icon_pass.png" id="pswd1_img1" class="pswdImg" />
           </span>
           <span class="error_next_box"></span>
         </div>
@@ -51,11 +49,6 @@
           <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
           <span class="box int_pass_check">
             <input type="text" id="pswd2" class="int" maxlength="20" />
-            <img
-              src="m_icon_check_disable.png"
-              id="pswd2_img1"
-              class="pswdImg"
-            />
           </span>
           <span class="error_next_box"></span>
         </div>
@@ -178,7 +171,7 @@
         <!-- 가입하기 버튼 시작-->
         <div class="btn_area">
           <button type="button" id="btnJoin">
-            <span>가입하기</span>
+            <span><strong>가입하기</strong></span>
           </button>
         </div>
         <!-- 가입하기 버튼 끝-->
@@ -186,6 +179,6 @@
       <!-- content 끝-->
     </div>
     <!-- wrapper 끝 -->
-    <script src="javascript/membership.js"></script>
+    <script src="js/membership.js"></script>
   </body>
 </html>

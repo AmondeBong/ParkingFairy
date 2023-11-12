@@ -1,11 +1,11 @@
-<!DOCTYPE html>
 {% load static %}
-
+<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+
     <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
     <!--css연결-->
   </head>
@@ -13,7 +13,7 @@
     <section class="login-form">
       <!--로그인 섹션시작-->
       <h1>PARKING FAIRY 계정으로 로그인</h1>
-      <form action="">
+      <form method="post" action="">
         <div class="int-area">
           <!--ID-->
           <input type="text" name="id" id="id" autocomplete="off" required />
