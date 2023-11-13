@@ -51,20 +51,16 @@ def detect(request):
         model.eval()
 
         results = model([img])
-        context = results.pandas().xyxy[0].to_json(orient="records")
+        context = {'data': results.pandas().xyxy[0].to_json(orient="records")}
         # json 형태로 저장된 정보
 
-        results.render()  # results.imgs 를 boxes and labels로 업데이트 함
-        now_time = datetime.datetime.now().strftime(DATETIME_FORMAT)  # 현재의 날짜 정보 불러오기
-
-        file_path = f"../static/result_json/{now_time}.json"
-
+        # results.render()  # results.imgs 를 boxes and labels로 업데이트 함
+        # now_time = datetime.datetime.now().strftime(DATETIME_FORMAT)  # 현재의 날짜 정보 불러오기
+        # file_path = f"../static/result_json/{now_time}.json"
         # 현재 날짜 정보가 이름인 이미지 생성
-        img_savepath = f"../static/result_picture/{now_time}.png"
+        # img_savepath = f"../static/result_picture/{now_time}.png"
+        # Image.fromarray(results.ims[0]).save(img_savepath)  # 업데이트된 result.img를 현재 날짜 정보로 저장
 
-        Image.fromarray(results.ims[0]).save(
-            img_savepath)  # 업데이트된 result.img를 현재 날짜 정보로 저장
-
-        return render(request, 'result/detect.html', context, img_savepath)
+        return render(request, 'result/detect.html', context)
 
     return render(request, 'Main/index.html')  # 이미지 불러오기에 실패할 경우 메인 페이지
