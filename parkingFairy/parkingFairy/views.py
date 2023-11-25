@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
 from PIL import Image
@@ -8,6 +8,7 @@ import io
 import os
 import torch
 import json
+
 
 DATETIME_FORMAT = "%Y-%m-%d_%H-%M-%S-%f"
 
@@ -21,15 +22,6 @@ def index(request):
 def error_404_view(request, exception):
     return HttpResponseNotFound("The page is note found!")
 # 404 화면 출력
-
-
-def login(request):
-    return render(request, 'Login/index.html')
-# Create your views here.
-
-
-def signup(request):
-    return render(request, 'SignUp/index.html')
 
 
 @csrf_exempt

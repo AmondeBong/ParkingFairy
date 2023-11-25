@@ -6,6 +6,7 @@ html{
 }
 
 body{
+    z-index: 1;
     padding : 0;
     margin : 0;
     font-family: 'Noto Sans KR', sans-serif;
@@ -142,7 +143,7 @@ a{
     height : 485px;
     position: relative;
     top : -25px;
-    background : url(../Image/mainview.jpg); 
+    background : url(Image/mainview.jpg); 
     background-size: contain;        /*축소될 때 형태 유지*/
     background-repeat: no-repeat;   /*이미지 반복 허용x*/
     background-position: center;    /*중앙을 기준으로 축소*/
@@ -186,10 +187,11 @@ a{
 
 /*scroll text 시작*/
 .scroll_text{
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fffff0;
+    background-color:#fffff0;
     position: sticky;
     top : 0px;
     
@@ -206,7 +208,7 @@ a{
 .port2{ 
     width : 100%;
     height : 715px;
-    background : url(../Image/port2.jpg);
+    background : url(Image/port2.jpg);
     background-size: contain;        /*축소될 때 형태 유지*/
     background-repeat: no-repeat;   /*이미지 반복 허용x*/
     background-position: center;    /*중앙을 기준으로 축소*/
@@ -308,7 +310,7 @@ button {   /*버튼부분 시작*/
     width : 100%;
     height : 1600px;
     background-color: beige ;
-    background: url(../Image/port3.jpg); /*https://pixabay.com/ko/illustrations/%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%9B%94%EC%9A%94%EC%9D%BC-%EC%86%8C%EC%85%9C-%EB%AF%B8%EB%94%94%EC%96%B4-%ED%8F%AC%EC%8A%A4%ED%8A%B8-4606231/*/
+    background: url(Image/port3.jpg); /*https://pixabay.com/ko/illustrations/%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%9B%94%EC%9A%94%EC%9D%BC-%EC%86%8C%EC%85%9C-%EB%AF%B8%EB%94%94%EC%96%B4-%ED%8F%AC%EC%8A%A4%ED%8A%B8-4606231/*/
     background-size: 72%;        /*축소될 때 형태 유지*/
     background-repeat: no-repeat;   /*이미지 반복 허용x*/
     background-position: center;    /*중앙을 기준으로 축소*/
@@ -320,10 +322,11 @@ button {   /*버튼부분 시작*/
 /*port5 시작*/
 .port5 {
     width : 100%;
-    height : 1000px;
+    height : 1100px;
     background-color: #2c3539;
+    word-break:break-all;
+    
 }      
-/* port5 끝*/
 
 /*하단 텍스트 부분 시작*/
 .H{ 
@@ -345,6 +348,8 @@ button {   /*버튼부분 시작*/
 }
 
 /*하단 텍스트 부분 끝*/
+
+/* port5 끝*/
 
 
 /*-----------------------메인 view의 ports 끝--------------------*/
@@ -396,10 +401,10 @@ button {   /*버튼부분 시작*/
     .mainview2{
         display: flex;
         width: 100%;
-        height : 485px;
+        height : 360px;
         position: relative;
         top : 15px;
-        background : url(../Image/mainview2.jpg); 
+        background : url(image/mainview2.jpg); 
         background-size: contain;        /*축소될 때 형태 유지*/
         background-repeat: no-repeat;   /*이미지 반복 허용x*/
         background-position: center;    /*중앙을 기준으로 축소*/
@@ -408,8 +413,8 @@ button {   /*버튼부분 시작*/
     .mainview2 .mainview___text2{ /*메인뷰 텍스트 시작*/
         font-size : 9px;
         position: absolute; /*반응형 텍스트 만들기위한 포지션값*/
-        top : 20%; /*제일 작은 화면에서 내가 마음에 드는 값*/
-        left : 37%; /*제일 작은 화면에서 내가 마음에 드는 값*/
+        top : 10%; /*제일 작은 화면에서 내가 마음에 드는 값*/
+        left : 42%; /*제일 작은 화면에서 내가 마음에 드는 값*/
         transform: translate( -20%, 80% );  /*점점 줄어들 때 내가 마음에 드는 위치*/       
         color:white;          /*메인뷰 텍스트 끝*/
     }
@@ -421,8 +426,8 @@ button {   /*버튼부분 시작*/
         border-radius: 25px;
         font-size: 15px;
         position: absolute;
-        top : 55%;
-        left: 40%;
+        top : 45%;
+        left: 33%;
         transform: translate( -10%, 90% );
     }
     /*--------메인 view 끝--------*/
@@ -430,23 +435,111 @@ button {   /*버튼부분 시작*/
 
     /*-------scroll text시작------*/
     .scroll_text{
-        display: none;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:#fffff0;
+        position: sticky;
+        top : 0px;
+        
+    }
+
+    .scroll_text a{
+        font-size: 18px;
+        padding : 0 10px;
+
     }
     /*-------scroll text끝--------*/
 
 
     /*---------port시작-----------*/
-    .port2{
-        display: none;
-    }
-    
-    .port3{
-        display: none;
+
+    .port2top{/*mobile port2 시작*/
+        font-size:20px;
+        top : 25px;
     }
 
-    .port4{
-        display: none;
+    .port2 h2{
+        font-size:15px;
     }
+
+    .port2{ 
+        width : 100%;
+        height : 315px;
+        background : url(Image/mobile_port2.1.png);
+        background-size: contain;        /*축소될 때 형태 유지*/
+      
+        background-repeat: no-repeat;   /*이미지 반복 허용x*/
+        background-position: center;    /*중앙을 기준으로 축소*/
+    }
+
+    .port2bottom{
+        position: relative;
+        text-align: center;
+        top : 160px;
+        font-size: 12px;
+    } /*mobile port2 끝*/
+
+
+/*-mobile 카메라 기능 시작-*/
+
+.text-center h2{  
+    font-size: 20px; 
+}
+/*-mobile 카메라 기능 끝-*/
+
+
+/*mobile port3 시작*/
+.port3 {
+    width : 100%;
+    height : 750px;
+    background-color: beige ;
+    background: url(Image/mobile-port3.png); /*https://pixabay.com/ko/illustrations/%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%9B%94%EC%9A%94%EC%9D%BC-%EC%86%8C%EC%85%9C-%EB%AF%B8%EB%94%94%EC%96%B4-%ED%8F%AC%EC%8A%A4%ED%8A%B8-4606231/*/
+    background-size: 100%;        /*축소될 때 형태 유지*/
+    background-repeat: no-repeat;   /*이미지 반복 허용x*/
+    background-position: center;    /*중앙을 기준으로 축소*/
+}     
+/*mobile port3 끝*/
+
+
+/*port5 시작*/
+.port5 {
+    width : 100%;
+    height : 1600px;
+    background-color: #2c3539;
+    word-break:keep-all;
+}      
+
+/*하단 텍스트 부분 시작*/
+.H{ 
+    color:whitesmoke;
+    position: relative;
+    
+}
+
+
+
+
+.caution{
+    color:#a9a9a9;
+    position: relative;  
+}
+
+.caution li{
+    position: relative;
+    left : -10%;
+}
+
+
+.btn-up{
+    position: relative;
+    left:60%;
+}
+
+/*하단 텍스트 부분 끝*/
+
+/* port5 끝*/
     /*----------port끝----------*/
 
 
