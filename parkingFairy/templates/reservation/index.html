@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}"> <!--css와 연결-->
+    <script src = "reservation.js" defer></script> <!--js와 연결-->
+</head>
+<body>
+
+         <!--카메라 기능 시작-->
+         <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center"><br><br><br>
+                    <h2 class="section-heading text-uppercase">자동차 탐지</h2><br><br><br>
+                </div>
+    
+                <div class="row_text-center">
+                    <form class="form-signin" method=post enctype=multipart/form-data>
+                        <input type="file" name="file" class="form-control-file" id="inputfile" />
+                        <br/>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+                    
+                    </form>
+                <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+                <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+                <script type="text/javascript">
+                    $('#inputfile').bind('change', function() {
+                        let fileSize = this.files[0].size/1024/1024; // this gives in MB
+                        if (fileSize > 10) {
+                        $("#inputfile").val(null);
+                        alert('파일크기가 너무 큽니다. 10MB 이상의 파일은 지원하지 않습니다.')
+                        return
+                        }
+            
+                        let ext = $('#inputfile').val().split('.').pop().toLowerCase();
+                        if($.inArray(ext, ['jpg','jpeg']) == -1) {
+                        $("#inputfile").val(null);
+                        alert('오직 jpeg/jpg 파일만 가능합니다!');
+                        }
+                    });
+                    
+                </script>
+                    
+         
+                </div>
+            </div>
+        </section>
+        <!--카메라 기능 끝-->
+
+        
+    <table border="1" width = 100%>
+      
+        <tr height = 180px; class = "table_text">
+            <td class = "a1" onClick="location.href='#'" style="cursor:pointer;"><strong> A행 1번</strong></td>
+            <td class = "a2" onClick="location.href='#'" style="cursor:pointer;"><strong> A행 2번</strong></td>
+            <td class = "a3" onClick="location.href='#'" style="cursor:pointer;"><strong> A행 3번</strong></td>
+            <td class = "a4" onClick="location.href='#'" style="cursor:pointer;"><strong> A행 4번</strong></td>
+            <td class = "a5" onClick="location.href='#'" style="cursor:pointer;"><strong> A행 5번</strong></td>
+        </tr>
+
+        <tr height = 180px; class = "table_text">
+            <td class = "b1" onClick="location.href='#'" style="cursor:pointer;"><strong> B행 1번</strong></td>
+            <td class = "b2" onClick="location.href='#'" style="cursor:pointer;"><strong> B행 2번</strong></td>
+            <td class = "b3" onClick="location.href='#'" style="cursor:pointer;"><strong> B행 3번</strong></td>
+            <td class = "b4" onClick="location.href='#'" style="cursor:pointer;"><strong> B행 4번</strong></td>
+            <td class = "b5" onClick="location.href='#'" style="cursor:pointer;"><strong> B행 5번</strong></td>
+        </tr>
+
+        <tr height = 180px; class = "table_text">
+            <td class = "c1" onClick="location.href='#'" style="cursor:pointer;"><strong> C행 1번</strong></td>
+            <td class = "c2" onClick="location.href='#'" style="cursor:pointer;"><strong> C행 2번</strong></td>
+            <td class = "c3" onClick="location.href='#'" style="cursor:pointer;"><strong> C행 3번</strong></td>
+            <td class = "c4" onClick="location.href='#'" style="cursor:pointer;"><strong> C행 4번</strong></td>
+            <td class = "c5" onClick="location.href='#'" style="cursor:pointer;"><strong> C행 5번</strong></td>
+        </tr>
+
+        <tr height =180px; class = "table_text">
+            <td class = "d1" onClick="location.href='#'" style="cursor:pointer;"><strong> D행 1번</strong></td>
+            <td class = "d2" onClick="location.href='#'" style="cursor:pointer;"><strong> D행 2번</strong></td>
+            <td class = "d3" onClick="location.href='#'" style="cursor:pointer;"><strong> D행 3번</strong></td>
+            <td class = "d4" onClick="location.href='#'" style="cursor:pointer;"><strong> D행 4번</strong></td>
+            <td class = "d5" onClick="location.href='#'" style="cursor:pointer;"><strong> D행 5번</strong></td>
+        </tr>
+
+        <tr height = 180px; class = "table_text">
+            <td class = "e1" onClick="location.href='#'" style="cursor:pointer;"><strong> E행 1번</strong></td>
+            <td class = "e2" onClick="location.href='#'" style="cursor:pointer;"><strong> E행 2번</strong></td>
+            <td class = "e3" onClick="location.href='#'" style="cursor:pointer;"><strong> E행 3번</strong></td>
+            <td class = "e4" onClick="location.href='#'" style="cursor:pointer;"><strong> E행 4번</strong></td>
+            <td class = "e5" onClick="location.href='#'" style="cursor:pointer;"><strong> E행 5번</strong></td>
+        </tr>
+    </table>
+
+
+
+</body>
+
+
+
+</html>

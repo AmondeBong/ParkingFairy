@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from PIL import Image
 import datetime
@@ -24,11 +25,15 @@ def error_404_view(request, exception):
 # 404 화면 출력
 
 
+def reservation(request):
+    return render(request, 'reservation/index.html')
+
+
 @csrf_exempt
 def detect(request):
     if request.method == "POST":  # request method 가 POST 일경우
         if "file" not in request.FILES:  # 받아오는 타입이 파일이 아닐경우, 다시 돌아가기
-            return render(request, 'Main/index.html')
+            return render(request, 'reservation/index.html')
         file = request.FILES["file"]  # 받아오는 타입이 파일일 경우 그대로 받아오기
 
         if not file:  # 파일이 아예 없을 경우 경고 보내기
@@ -48,8 +53,6 @@ def detect(request):
 
         # results.render()  # results.imgs 를 boxes and labels로 업데이트 함
         # now_time = datetime.datetime.now().strftime(DATETIME_FORMAT)  # 현재의 날짜 정보 불러오기
-        # file_path = f"../static/result_json/{now_time}.json"
-        # 현재 날짜 정보가 이름인 이미지 생성
         # img_savepath = f"../static/result_picture/{now_time}.png"
         # Image.fromarray(results.ims[0]).save(img_savepath)  # 업데이트된 result.img를 현재 날짜 정보로 저장
 

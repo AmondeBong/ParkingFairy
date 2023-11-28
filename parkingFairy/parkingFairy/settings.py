@@ -94,10 +94,18 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # css,js, image 경로 추가
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
+# 로그인 경로
+LOGIN_URL = '/user/login/'
 # Login 성공시 URL 경로
 LOGIN_REDIRECT_URL = "/"
 
 # Logout 성공시 URL 경로
 LOGOUT_REDIRECT_URL = "/"
+
+
+ACCOUNT_SESSION_REMEMBER = True  # 브라우저를 닫아도 세션 기록 유지
+SESSION_COOKIE_AGE = 3600  # 쿠키를 한 시간만 저장
+
+
+AUTH_USER_MODEL = 'user.User'
+# custom model 설정

@@ -10,22 +10,30 @@
     <!--css연결-->
   </head>
   <body>
+    {% if not user.is_authenticated %}
     <section class="login-form">
       <!--로그인 섹션시작-->
       <h1>PARKING FAIRY 계정으로 로그인</h1>
-      <form method="post" action="">
+      <form method="POST" action="">
+        {% csrf_token %}
         <div class="int-area">
           <!--ID-->
-          <input type="text" name="id" id="id" autocomplete="off" required />
-          <label for="id">USER NAME</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            autocomplete="off"
+            required
+          />
+          <label for="id">EMAIL</label>
         </div>
 
         <div class="int-area">
           <!--PASSWORD-->
           <input
             type="password"
-            name="pw"
-            id="pw"
+            name="password"
+            id="password"
             autocomplete="off"
             required
           />
@@ -34,7 +42,9 @@
 
         <div class="btn-area">
           <!--로그인버튼-->
-          <button id="btn" type="submit">LOGIN</button>
+          <button id="btnLogin" type="submit" value="signin_submit">
+            LOGIN
+          </button>
         </div>
       </form>
 
@@ -43,5 +53,21 @@
       </div>
     </section>
     <!--로그인 섹션 끝-->
+    {% else %}
+
+    <section class="login-form">
+      <div class="caption">
+        <a href="{% url 'index' %}">뒤로가기</a>
+      </div>
+
+      <div class="caption">
+        <label for="result">{{ user.username }}님 반갑습니다!</label>
+      </div>
+
+      <div class="caption">
+        <a href="{% url 'logout' %}"> logout </a>
+      </div>
+    </section>
+    {% endif %}
   </body>
 </html>

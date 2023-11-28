@@ -22,7 +22,8 @@ urlpatterns = [
 
     path('', views.index, name='index'),
     path('user/', include('user.urls')),
-    path('detect/', views.detect, name='detect'),
+    path('reservation/', views.reservation, name='reservation'),
+    path('admin/', admin.site.urls),
 
 
 ]

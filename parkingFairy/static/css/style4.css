@@ -1,0 +1,155 @@
+.table_text{
+    text-align: center;
+    vertical-align: top;
+}
+
+/* a행 */
+.a1{
+    background-color: rgb(124,252,0);
+}
+.a2{
+    background-color: rgb(124,252,0);
+}
+.a3{
+    background-color: rgb(124,252,0);
+}
+.a4{
+    background-color: rgb(124,252,0);
+}
+.a5{
+    background-color: rgb(124,252,0);
+}
+
+
+/* b행 */
+.b1{
+    background-color: rgb(124,252,0);
+}
+.b2{
+    background-color: rgb(124,252,0);
+}
+.b3{
+    background-color: rgb(124,252,0);
+}
+.b4{
+    background-color: rgb(124,252,0);
+}
+.b5{
+    background-color: rgb(124,252,0);
+}
+
+
+/* c행 */
+.c1{
+    background-color: rgb(124,252,0);
+}
+.c2{
+    background-color: rgb(124,252,0);
+}
+.c3{
+    background-color: rgb(124,252,0);
+}
+.c4{
+    background-color: rgb(124,252,0);
+}
+.c5{
+    background-color: rgb(124,252,0);
+}
+
+
+/* d행 */
+.d1{
+    background-color: rgb(124,252,0);
+}
+.d2{
+    background-color: rgb(124,252,0);
+}
+.d3{
+    background-color: rgb(124,252,0);
+}
+.d4{
+    background-color: rgb(124,252,0);
+}
+.d5{
+    background-color: rgb(124,252,0);
+}
+
+
+/* e행 */
+.e1{
+    background-color: rgb(124,252,0);
+}
+.e2{
+    background-color: rgb(124,252,0);
+}
+.e3{
+    background-color: rgb(124,252,0);
+}
+.e4{
+    background-color: rgb(124,252,0);
+}
+.e5{
+    background-color: rgb(124,252,0);
+}
+
+
+
+/*카메라 기능 시작*/
+.text-center h2{    /*텍스트 부분 시작*/
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;  /*텍스트 부분 끝*/
+}
+
+.row_text-center .form-signin{  /*파일선택부분 시작*/
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}                              /*파일선택부분 끝*/
+
+
+button {   /*버튼부분 시작*/
+    margin: 20px;
+}
+
+.btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.btn-outline {
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.btn-lg {
+    background-color: aliceblue;
+    color: #1e6b7b;
+}
+
+.btn-lg-outline {
+    border: 3px solid aliceblue;
+    color: #1e6b7b;
+}
+
+.btn-lg-outline:hover { /*버튼부분 끝*/
+    color: #1e6b7b;
+    background: aliceblue;
+}
+
+/*카메라 기능 끝*/
