@@ -115,6 +115,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     gender = models.CharField(max_length=5, null=True)
     mobile = models.CharField(max_length=12, null=True, default='01000000000')
     car = models.JSONField('json', null=True, default=dict)
+    name = models.CharField(max_length=30, null=True)
 
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)

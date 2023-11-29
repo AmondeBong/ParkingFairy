@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import User, UserManager
+from .models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import get_user_model
 
 
 @csrf_exempt
@@ -44,7 +44,7 @@ def index(request):
         birthday_month = request.POST.get('mm')
         birthday_date = request.POST.get('dd')
         gender = request.POST.get('gender')
-        check_email = request.POST.get('check_email')
+        name = request.POST.get('name')
         mobile = request.POST.get('mobile')
 
         if password != check_pswd:
@@ -56,19 +56,18 @@ def index(request):
                 return render(request, 'SignUp/alert3.html')
                 # 존재하는 아이디면 alert
             else:
-                User.objects.create_user(username, password, email, birthday_year,
-                                         birthday_month, birthday_date, gender, check_email, mobile)
-                # new_user.username = username
-                # new_user.password = password
-                # new_user.email = email
-                # new_user.birthday_year = birthday_year
-                # new_user.birthday_month = birthday_month
-                # new_user.birthday_date = birthday_date
-                # new_user.gender = gender
-                # new_user.check_email = check_email
-                # new_user.mobile = mobile
+                user = get_user_model().objects.create_user(email, username, password)
 
-                # new_user.save()
+                user.birthday_year = birthday_year
+                user.birthday_month = birthday_month
+                user.birthday_date = birthday_date
+                user.gender = gender
+                user.email = email
+                user.mobile = mobile
+                user.name = name
+
+                user.save()
+
                 return redirect('/user/login/')
 
 
