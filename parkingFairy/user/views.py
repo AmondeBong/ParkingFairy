@@ -13,13 +13,13 @@ def Login(request):
         return render(request, 'Login/index.html')
     elif request.method == 'POST':
 
-        email = request.POST['email']
+        username = request.POST['username']
         password = request.POST['password']
 
-        if not User.objects.filter(email=email).exists():
+        if not User.objects.filter(username=username).exists():
             return render(request, 'Login/alert2.html')
 
-        authenticated_user = authenticate(email=email,
+        authenticated_user = authenticate(username=username,
                                           password=password)
         if authenticated_user is not None:
             login(request, authenticated_user)

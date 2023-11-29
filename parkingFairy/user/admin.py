@@ -1,5 +1,17 @@
 from django.contrib import admin
-from .models import User
+from . import models
 
-admin.site.register(User)  # Admin에 UserModel 추가
-# Register your models here.
+
+@admin.register(models.User)
+class UserAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'username',
+        'email',
+        'date_joined',
+    )
+
+    list_display_links = (
+        'username',
+        'email',
+    )
