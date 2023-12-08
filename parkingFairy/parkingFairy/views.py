@@ -10,7 +10,7 @@ import os
 import torch
 import json
 from django.contrib.auth import get_user_model
-
+from .mqtt_client import mqtt_connect
 
 small = [0, 1, 4, 7, 9, 10, 11, 15, 18, 45, 46, 54, 59, 61, 73, 74]
 middle = [2, 5, 6, 8, 12, 13, 14, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
@@ -61,21 +61,28 @@ def reservation(request):
         car['name'] = result['name']
 
         if result['class'] in small:
-            car['size'] = 0
+            car['size'] = '소형'
         elif result['class'] in middle:
-            car['size'] = 1
+            car['size'] = '중형'
         else:
-            car['size'] = 2
-
-        context = {'data': car}
+            car['size'] = '대형'
 
         user = request.user
         user.car = car
         user.save()
 
+        results.render()  # results.imgs 를 boxes and labels로 업데이트 함
+        # now_time = datetime.datetime.now().strftime(DATETIME_FORMAT)  # 현재의 날짜 정보 불러오기
+        img_path = f"parkingFairy/static/result_image/{user.username}.png"
+        Image.fromarray(results.ims[0]).save(
+            img_path)  # 업데이트된 result.img를 현재 날짜 정보로 저장
+
         file_path = f"parkingFairy/static/result_json/{user.username}.json"
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(car, f)
+
+        img_path_2 = f"static/result_image/{user.username}.png"
+        context = {'name': car['name'], 'size': car['size'], 'img': img_path_2}
 
         return render(request, 'result/detect.html', context)
 
@@ -110,9 +117,9 @@ def detect(request):
 
         # json 형태로 저장된 정보
 
-        # results.render()  # results.imgs 를 boxes and labels로 업데이트 함
-        now_time = datetime.datetime.now().strftime(DATETIME_FORMAT)  # 현재의 날짜 정보 불러오기
-        json_savepath = f"../static/result_json/{now_time}.json"
+        results.render()  # results.imgs 를 boxes and labels로 업데이트 함
+        # now_time = datetime.datetime.now().strftime(DATETIME_FORMAT)  # 현재의 날짜 정보 불러오기
+        file_path = f"parkingFairy/static/result_image/{user.username}.png"
         # Image.fromarray(results.ims[0]).save(img_savepath)  # 업데이트된 result.img를 현재 날짜 정보로 저장
 
         return render(request, 'result/detect.html', context)

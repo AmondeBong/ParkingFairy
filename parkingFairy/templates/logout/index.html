@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그아웃 페이지</title>
+    <link rel="stylesheet" href="{% static 'css/style5.css' %}" />
+    <!--css와 연결-->
+  </head>
+  <body>
+    <div class="logout">
+      <p class="user_name">
+        <strong>{{ user.username }}님 반갑습니다!</strong>
+      </p>
+
+      <div id="btn_group">
+        <button id="test_btn1" onclick="location.href='{% url 'index' %}'">
+          뒤로가기
+        </button>
+        <button id="test_btn2" onclick="location.href='{% url 'logout' %}'">
+          LOGOUT
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

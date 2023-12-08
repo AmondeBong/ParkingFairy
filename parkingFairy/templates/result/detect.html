@@ -4,13 +4,150 @@
   <head>
     <meta charset="UTF-8" />
     <title>parking fairy detect result</title>
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}" />
+    <!--css와 연결-->
   </head>
   <body>
-    <h3 class="detect_result">
-      <label for="result">{{ data }}</label>
-    </h3>
-    <a target="_self" title="회원가입창"
-      ><img src="{{ img_savepath }}" id="logo"
-    /></a>
+    <nav class="navbar">
+      <div class="navbar___logo">
+        <!--parking fairy로고 시작-->
+        <a href="/">PARKING FIARY</a>
+      </div>
+      <!--parking fairy로고 끝-->
+
+      <!--무료 아이콘 사이트 https://fontawesome.com/-->
+
+      <div class="boxcontainer">
+        <!--검색창 시작-->
+        <table class="elementscontainer">
+          <tr>
+            <td>
+              <input type="text" placeholder="Search" class="search" />
+            </td>
+            <td>
+              <a href="#">
+                <i
+                  class="fa-solid fa-magnifying-glass fa-lg"
+                  style="color: #030e21"
+                ></i
+                ><!--돋보기 fa-lg = 33%확대-->
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--검색창 끝-->
+
+      <a href="{% url 'login' %}" class="icons">
+        <i class="fa-regular fa-user fa-xl" style="color: #031026"></i
+        ><!--사용자-->
+      </a>
+
+      <!--mobile 환경일 때 navbar시작-->
+      <a href="#" class="backspace">
+        <i class="fa-solid fa-angle-left fa-xl" style="color: #010813"></i>
+      </a>
+
+      <a href="#" class="smallsearch">
+        <i
+          class="fa-solid fa-magnifying-glass fa-xl"
+          style="color: #010409"
+        ></i>
+      </a>
+
+      <!--mobile 환경일 때 navbar종료-->
+    </nav>
+
+    <img src="../{{img}}" alt="result" />
+    <div class="mainview___text">
+      <h1>차종은 {{ name }} 이며 크기는 {{ size }} 입니다.</h1>
+    </div>
+
+    <div class="mainview___text">
+      <h1>좌석을 선택하세요</h1>
+    </div>
+
+    <table border="1" width="100%">
+      <tr height="180px;" class="table_text">
+        <td class="a1" onClick="location.href='#'" style="cursor: pointer">
+          <strong> A행 1번</strong>
+        </td>
+        <td class="a2" onClick="location.href='#'" style="cursor: pointer">
+          <strong> A행 2번</strong>
+        </td>
+        <td class="a3" onClick="location.href='#'" style="cursor: pointer">
+          <strong> A행 3번</strong>
+        </td>
+        <td class="a4" onClick="location.href='#'" style="cursor: pointer">
+          <strong> A행 4번</strong>
+        </td>
+        <td class="a5" onClick="location.href='#'" style="cursor: pointer">
+          <strong> A행 5번</strong>
+        </td>
+        <td class="a6" onClick="location.href='#'" style="cursor: pointer">
+          <strong> A행 6번</strong>
+        </td>
+        <td class="a7" onClick="location.href='#'" style="cursor: pointer">
+          <strong> A행 7번</strong>
+        </td>
+        <td class="a8" onClick="location.href='#'" style="cursor: pointer">
+          <strong> A행 8번</strong>
+        </td>
+      </tr>
+
+      <tr height="180px;" class="table_text">
+        <td class="b1" onClick="location.href='#'" style="cursor: pointer">
+          <strong> B행 1번</strong>
+        </td>
+        <td class="b2" onClick="location.href='#'" style="cursor: pointer">
+          <strong> B행 2번</strong>
+        </td>
+        <td class="b3" onClick="location.href='#'" style="cursor: pointer">
+          <strong> B행 3번</strong>
+        </td>
+        <td class="b4" onClick="location.href='#'" style="cursor: pointer">
+          <strong> B행 4번</strong>
+        </td>
+        <td class="b5" onClick="location.href='#'" style="cursor: pointer">
+          <strong> B행 5번</strong>
+        </td>
+        <td class="b6" onClick="location.href='#'" style="cursor: pointer">
+          <strong> B행 6번</strong>
+        </td>
+        <td class="b7" onClick="location.href='#'" style="cursor: pointer">
+          <strong> B행 7번</strong>
+        </td>
+        <td class="b8" onClick="location.href='#'" style="cursor: pointer">
+          <strong> B행 8번</strong>
+        </td>
+      </tr>
+
+      <tr height="180px;" class="table_text">
+        <td class="c1" onClick="location.href='#'" style="cursor: pointer">
+          <strong> C행 1번</strong>
+        </td>
+        <td class="c2" onClick="location.href='#'" style="cursor: pointer">
+          <strong> C행 2번</strong>
+        </td>
+        <td class="c3" onClick="location.href='#'" style="cursor: pointer">
+          <strong> C행 3번</strong>
+        </td>
+        <td class="c4" onClick="location.href='#'" style="cursor: pointer">
+          <strong> C행 4번</strong>
+        </td>
+        <td class="c5" onClick="location.href='#'" style="cursor: pointer">
+          <strong> C행 5번</strong>
+        </td>
+        <td class="c6" onClick="location.href='#'" style="cursor: pointer">
+          <strong> C행 6번</strong>
+        </td>
+        <td class="c7" onClick="location.href='#'" style="cursor: pointer">
+          <strong> C행 7번</strong>
+        </td>
+        <td class="c8" onClick="location.href='#'" style="cursor: pointer">
+          <strong> C행 8번</strong>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

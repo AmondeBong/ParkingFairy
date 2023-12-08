@@ -4,6 +4,12 @@
 }
 
 /* a행 */
+.table_text{
+    text-align: center;
+    vertical-align: top;
+}
+
+/* a행 */
 .a1{
     background-color: rgb(124,252,0);
 }
@@ -19,6 +25,16 @@
 .a5{
     background-color: rgb(124,252,0);
 }
+.a6{
+    background-color: rgb(124,252,0);
+}
+.a7{
+    background-color: rgb(124,252,0);
+}
+.a8{
+    background-color: rgb(124,252,0);
+}
+
 
 
 /* b행 */
@@ -35,6 +51,15 @@
     background-color: rgb(124,252,0);
 }
 .b5{
+    background-color: rgb(124,252,0);
+}
+.b6{
+    background-color: rgb(124,252,0);
+}
+.b7{
+    background-color: rgb(124,252,0);
+}
+.b8{
     background-color: rgb(124,252,0);
 }
 
@@ -55,43 +80,15 @@
 .c5{
     background-color: rgb(124,252,0);
 }
-
-
-/* d행 */
-.d1{
+.c6{
     background-color: rgb(124,252,0);
 }
-.d2{
+.c7{
     background-color: rgb(124,252,0);
 }
-.d3{
+.c8{
     background-color: rgb(124,252,0);
 }
-.d4{
-    background-color: rgb(124,252,0);
-}
-.d5{
-    background-color: rgb(124,252,0);
-}
-
-
-/* e행 */
-.e1{
-    background-color: rgb(124,252,0);
-}
-.e2{
-    background-color: rgb(124,252,0);
-}
-.e3{
-    background-color: rgb(124,252,0);
-}
-.e4{
-    background-color: rgb(124,252,0);
-}
-.e5{
-    background-color: rgb(124,252,0);
-}
-
 
 
 /*카메라 기능 시작*/

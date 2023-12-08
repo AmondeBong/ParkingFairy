@@ -75,3 +75,8 @@ def index(request):
 def Logout(request):
     logout(request)
     return redirect('/')
+
+
+@login_required
+def mypage(request):
+    return render(request, 'logout/index.html')

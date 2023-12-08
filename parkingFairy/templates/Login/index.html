@@ -53,8 +53,7 @@
       </div>
     </section>
     <!--로그인 섹션 끝-->
-    {% else %}
-
+    {% else %} {% comment %}
     <section class="login-form">
       <div class="caption">
         <a href="{% url 'index' %}">뒤로가기</a>
@@ -68,6 +67,11 @@
         <a href="{% url 'logout' %}"> logout </a>
       </div>
     </section>
+    {% endcomment %}
+    <script language="javascript">
+      location.href = "/user/mypage";
+    </script>
+
     {% endif %}
   </body>
 </html>
