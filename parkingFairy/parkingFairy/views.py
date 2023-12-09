@@ -73,11 +73,11 @@ def reservation(request):
 
         results.render()  # results.imgs 를 boxes and labels로 업데이트 함
         # now_time = datetime.datetime.now().strftime(DATETIME_FORMAT)  # 현재의 날짜 정보 불러오기
-        img_path = f"parkingFairy/parkingFairy/static/result_image/{user.username}.png"
+        img_path = f"../static/result_image/{user.username}.png"
         Image.fromarray(results.ims[0]).save(
             img_path)  # 업데이트된 result.img를 현재 날짜 정보로 저장
 
-        file_path = f"parkingFairy/static/result_json/{user.username}.json"
+        file_path = f"../static/result_json/{user.username}.json"
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(car, f)
 
