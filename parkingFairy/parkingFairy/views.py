@@ -81,7 +81,7 @@ def reservation(request):
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(car, f)
 
-        img_path_2 = f"/static/result_image/{user.username}.png"
+        img_path_2 = f"static/result_image/{user.username}.png"
         context = {'name': car['name'], 'size': car['size'], 'img': img_path_2}
 
         return render(request, 'result/detect.html', context)
