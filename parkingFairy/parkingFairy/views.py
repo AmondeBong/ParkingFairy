@@ -77,7 +77,7 @@ def reservation(request):
         Image.fromarray(results.ims[0]).save(
             img_path)  # 업데이트된 result.img를 현재 날짜 정보로 저장
 
-        file_path = f"../static/result_json/{user.username}.json"
+        file_path = f"/srv/ParkingFairy/parkingFairy/static/result_json/{user.username}.json"
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(car, f)
 
