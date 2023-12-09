@@ -90,7 +90,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = '/srv/ParkingFairy/parkingFairy/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # css,js, image 경로 추가
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
