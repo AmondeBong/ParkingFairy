@@ -2,8 +2,9 @@
 Description=uWSGI service
 After=syslog.target
 
+
 [Service]
-ExecStart=/home/ubuntu/srv/myvenv/bin/uwsgi -i /home/ubuntu/srv/ParkingFairy/parkingFairy/parkingFairy/.config/uwsgi/mysite.ini
+ExecStart=/home/ubuntu/srv/myvenv/bin/uwsgi 
 
 Restart=always
 KillSignal=SIGQUIT
