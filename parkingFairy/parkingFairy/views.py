@@ -10,7 +10,6 @@ import os
 import torch
 import json
 from django.contrib.auth import get_user_model
-from .mqtt_client import mqtt_connect
 
 small = [0, 1, 4, 7, 9, 10, 11, 15, 18, 45, 46, 54, 59, 61, 73, 74]
 middle = [2, 5, 6, 8, 12, 13, 14, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
