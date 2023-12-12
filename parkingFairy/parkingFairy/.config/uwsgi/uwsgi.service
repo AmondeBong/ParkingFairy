@@ -4,7 +4,7 @@ After=syslog.target
 
 
 [Service]
-ExecStart=/home/ubuntu/srv/myvenv/bin/uwsgi -i /srv/ParkingFairy/parkingFairy/parkingFairy/.config/uwsgi/mysite.ini
+ExecStart=/home/ubuntu/myvenv/bin/uwsgi -i /srv/ParkingFairy/parkingFairy/parkingFairy/.config/uwsgi/mysite.ini
 
 Restart=always
 KillSignal=SIGQUIT
